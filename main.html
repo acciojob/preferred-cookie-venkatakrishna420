@@ -1,29 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customizable Font (Cookie)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Preferred Cookie: Customizable Font</h1>
 
-<html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <!-- the entire body must be written by student -->
-    <form>
-      <label for="fontsize">Font Size:</label>
+  <div class="panel">
+    <form id="prefForm" autocomplete="off">
+      <label for="fontsize">Font Size (px)</label>
       <input
-        type="number"
         id="fontsize"
         name="fontsize"
+        type="number"
         min="8"
         max="72"
         value="16"
+        required
       />
-      <br />
-      <label for="fontcolor">Font Color:</label>
-      <input type="color" id="fontcolor" name="fontcolor" value="#000000" />
-      <br />
-      <input type="submit" value="Save" />
-    </form>
 
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
+      <label for="fontcolor">Font Color</label>
+      <input
+        id="fontcolor"
+        name="fontcolor"
+        type="color"
+        value="#000000"
+      />
+
+      <div class="controls">
+        <input type="submit" value="Save" />
+        <button type="button" id="resetBtn">Reset to defaults</button>
+      </div>
+
+      <p class="note">
+        The selections are saved to cookies named <code>fontsize</code> and <code>fontcolor</code>.
+        Font size is stored with <code>px</code> (e.g. <code>18px</code>).
+      </p>
+    </form>
+  </div>
+
+  <p class="sample">
+    This sample text shows the current font settings. Change font size and color above and click
+    <strong>Save</strong>. Reload the page to confirm saved preferences are applied automatically.
+  </p>
+
+  <script src="script.js"></script>
+</body>
 </html>
